@@ -99,6 +99,20 @@ $ npm run test:cov
 
 ## Deployment
 
+### Render with Docker
+
+Create a Render **Web Service**, select **Docker** as the runtime, and use this
+directory as the service root. Render will build the included `Dockerfile` and
+provide the `PORT` environment variable; the application listens on that port.
+Set the application's database, Redis, and other required secrets in the
+Render dashboard rather than copying an `.env` file into the image. In
+particular, configure `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_USERNAME`,
+`POSTGRES_PASSWORD`, `POSTGRES_DATABASE`, `REDIS_HOST`, and `REDIS_PORT`.
+
+The Docker build installs development dependencies only in its build stage,
+then removes them before creating the runtime image. The final image runs as
+the unprivileged `node` user and omits source maps and declaration files.
+
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
 If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
