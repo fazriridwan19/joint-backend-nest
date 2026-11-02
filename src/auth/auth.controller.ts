@@ -5,6 +5,7 @@ import {
   HttpCode,
   HttpStatus,
   Inject,
+  Logger,
   Patch,
   Post,
   Req,
@@ -30,6 +31,7 @@ type AuthenticatedRequest = Request & { user: User };
 
 @Controller('api/v1/auth')
 export class AuthController {
+  private readonly logger = new Logger(AuthController.name);
   constructor(
     @Inject(AuthService) private readonly authService: IAuthService,
   ) {}
@@ -62,24 +64,30 @@ export class AuthController {
   }
 
   @Get('me')
+  @UseGuards(AuthGuard)
   async me(@Req() request: AuthenticatedRequest): Promise<UserResponse> {
+    this.logger.log(`Fetching profile for user ${request.user.id}`);
     const user = await this.authService.getUserAsDto(request.user.id);
     return user;
   }
 
   @Patch('me')
+  @UseGuards(AuthGuard)
   async updateProfile(
     @Req() request: AuthenticatedRequest,
     @Body() body: UpdateProfileRequest,
   ): Promise<UserResponse> {
+    this.logger.log(`Updating profile for user ${request.user.id}`);
     return this.authService.updateProfile(request.user.id, body);
   }
 
   @Patch('me/password')
+  @UseGuards(AuthGuard)
   async changePassword(
     @Req() request: AuthenticatedRequest,
     @Body() body: ChangePasswordRequest,
   ): Promise<{ updated: boolean }> {
+    this.logger.log(`Changing password for user ${request.user.id}`);
     return this.authService.changePassword(request.user.id, body);
   }
 }
