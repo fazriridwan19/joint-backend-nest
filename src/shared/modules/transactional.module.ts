@@ -1,5 +1,5 @@
 import { Module, OnModuleInit } from '@nestjs/common';
-import { DataSourceHolder } from 'src/shared/config/transactional.config';
+import { DataSourceHolder } from '../config/transactional.config';
 import { DataSource } from 'typeorm';
 
 @Module({})

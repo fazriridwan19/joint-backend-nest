@@ -1,4 +1,4 @@
-import { User } from 'src/auth/entities/user.entity';
+import { User } from '../entities/user.entity';
 import { DeepPartial } from 'typeorm';
 
 export interface IUserRepository {

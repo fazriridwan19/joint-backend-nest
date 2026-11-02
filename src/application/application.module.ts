@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ApplicationActivityRepository } from 'src/application/repositories/application-activity.repository';
-import { ApplicationRepository } from 'src/application/repositories/application.repository';
-import { CompanyModule } from 'src/company/company.module';
+import { ApplicationActivityRepository } from './repositories/application-activity.repository';
+import { ApplicationRepository } from './repositories/application.repository';
+import { CompanyModule } from '../company/company.module';
 import { AuthModule } from '../auth/auth.module';
 import { ApplicationController } from './controllers/application.controller';
 import { NoteController } from './controllers/note.controller';

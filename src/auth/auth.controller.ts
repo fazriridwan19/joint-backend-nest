@@ -11,7 +11,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { IAuthService } from 'src/auth/interfaces/auth.service.interface';
+import { IAuthService } from './interfaces/auth.service.interface';
 import {
   ChangePasswordRequest,
   LoginRequest,

@@ -1,8 +1,8 @@
 import { Processor, WorkerHost } from '@nestjs/bullmq';
 import { Job } from 'bullmq';
-import { CvLlmService } from 'src/cv/services/cv-llm.service';
-import { CvPdfService } from 'src/cv/services/cv-pdf.service';
-import { CvStorageService } from 'src/cv/services/cv-storage.service';
+import { CvLlmService } from './services/cv-llm.service';
+import { CvPdfService } from './services/cv-pdf.service';
+import { CvStorageService } from './services/cv-storage.service';
 import {
   CV_LEGACY_DISPATCH_JOB,
   CV_MAX_ATTEMPTS,

@@ -5,8 +5,8 @@ import {
   TokenResponse,
   UpdateProfileRequest,
   UserResponse,
-} from 'src/auth/auth.dto';
-import { User } from 'src/auth/entities/user.entity';
+} from '../auth.dto';
+import { User } from '../entities/user.entity';
 
 export interface IAuthService {
   register(request: RegisterRequest): Promise<UserResponse>;

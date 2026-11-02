@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CompanyResponse } from 'src/application/application.dto';
-import { CompanyListRequest, CompanyRequest } from 'src/company/company.dto';
-import { Company } from 'src/company/company.entity';
-import { CompanyRepository } from 'src/company/company.repository';
-import { ApiException } from 'src/shared/api/api-exception';
-import { BusinessErrorCode } from 'src/shared/business-error-code';
+import { CompanyResponse } from '../application/application.dto';
+import { CompanyListRequest, CompanyRequest } from './company.dto';
+import { Company } from './company.entity';
+import { CompanyRepository } from './company.repository';
+import { ApiException } from '../shared/api/api-exception';
+import { BusinessErrorCode } from '../shared/business-error-code';
 
 @Injectable()
 export class CompanyService {

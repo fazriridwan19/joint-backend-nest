@@ -12,10 +12,10 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { User } from 'src/auth/entities/user.entity';
-import { CompanyListRequest, CompanyRequest } from 'src/company/company.dto';
-import { CompanyService } from 'src/company/company.service';
+import { AuthGuard } from '../auth/auth.guard';
+import { User } from '../auth/entities/user.entity';
+import { CompanyListRequest, CompanyRequest } from './company.dto';
+import { CompanyService } from './company.service';
 
 type AuthenticatedRequest = Request & { user: User };
 

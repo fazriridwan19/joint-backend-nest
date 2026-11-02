@@ -5,7 +5,7 @@ import { REDIS_CLIENT } from '../../shared/modules/redis.module';
 import {
   ConsumeRefreshTokenResult,
   IRefreshTokenRepository,
-} from 'src/auth/interfaces/refresh-token.repository.interface';
+} from '../interfaces/refresh-token.repository.interface';
 
 const TOKEN_PREFIX = 'auth:refresh:';
 const USER_PREFIX = 'auth:user-refresh:';

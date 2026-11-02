@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DatabaseModule } from 'src/shared/modules/database.module';
-import { TransactionalModule } from 'src/shared/modules/transactional.module';
+import { DatabaseModule } from './shared/modules/database.module';
+import { TransactionalModule } from './shared/modules/transactional.module';
 import { ApplicationModule } from './application/application.module';
 import { AuthModule } from './auth/auth.module';
 import { ProductivityModule } from './productivity/productivity.module';
