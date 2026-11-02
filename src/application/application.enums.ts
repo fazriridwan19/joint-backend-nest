@@ -1,0 +1,46 @@
+export enum ApplicationStatus {
+  WISHLIST = 'WISHLIST',
+  APPLIED = 'APPLIED',
+  IN_REVIEW = 'IN_REVIEW',
+  ASSESSMENT = 'ASSESSMENT',
+  INTERVIEW = 'INTERVIEW',
+  OFFER = 'OFFER',
+  HIRED = 'HIRED',
+  REJECTED = 'REJECTED',
+  WITHDRAWN = 'WITHDRAWN',
+  ON_HOLD = 'ON_HOLD',
+  GHOSTED = 'GHOSTED',
+}
+
+export enum EmploymentType {
+  FULL_TIME = 'FULL_TIME',
+  PART_TIME = 'PART_TIME',
+  CONTRACT = 'CONTRACT',
+  INTERNSHIP = 'INTERNSHIP',
+  FREELANCE = 'FREELANCE',
+}
+
+export enum WorkArrangement {
+  ONSITE = 'ONSITE',
+  HYBRID = 'HYBRID',
+  REMOTE = 'REMOTE',
+}
+
+export enum ApplicationSource {
+  LINKEDIN = 'LINKEDIN',
+  JOBSTREET = 'JOBSTREET',
+  GLINTS = 'GLINTS',
+  KALIBRR = 'KALIBRR',
+  COMPANY_CAREER_PAGE = 'COMPANY_CAREER_PAGE',
+  REFERRAL = 'REFERRAL',
+  RECRUITER = 'RECRUITER',
+  UNIVERSITY_CAMPUS = 'UNIVERSITY_CAMPUS',
+  OTHER = 'OTHER',
+}
+
+export enum ApplicationPriority {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  CRITICAL = 'CRITICAL',
+}

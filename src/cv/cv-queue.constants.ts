@@ -1,0 +1,10 @@
+export const CV_QUEUE_NAME = 'cv-processing';
+export const CV_RECOVERY_JOB = 'recover-stale-pending-profiles';
+export const CV_RECOVERY_SCHEDULER_ID = 'cv-stale-pending-recovery';
+export const CV_LEGACY_DISPATCH_JOB = 'dispatch-pending-profiles';
+export const CV_LEGACY_DISPATCH_SCHEDULER_ID = 'cv-pending-profile-dispatch';
+export const CV_STALE_PENDING_AGE_MS = 60 * 1000;
+export const CV_PROCESS_JOB = 'process-profile';
+export const CV_MAX_ATTEMPTS = 5;
+export const CV_BATCH_SIZE = 10;
+export const CV_MAX_FILE_SIZE = 5 * 1024 * 1024;
