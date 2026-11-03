@@ -1,5 +1,9 @@
 import { ConfigService } from '@nestjs/config';
 import { GoogleGenAI } from '@google/genai';
+import {
+  CV_ANALYSIS_RESPONSE_SCHEMA,
+  CV_EXTRACTION_RESPONSE_SCHEMA,
+} from '../cv-llm.schemas';
 import { CvLlmService } from './cv-llm.service';
 
 jest.mock('@google/genai', () => ({
@@ -65,6 +69,7 @@ describe('CvLlmService', () => {
         contents: string;
         config: {
           responseMimeType: string;
+          responseSchema: unknown;
           temperature: number;
           systemInstruction: string;
         };
@@ -73,9 +78,9 @@ describe('CvLlmService', () => {
     expect(request.contents).toBe(JSON.stringify({ cvText: 'CV text' }));
     expect(request.config).toMatchObject({
       responseMimeType: 'application/json',
+      responseSchema: CV_EXTRACTION_RESPONSE_SCHEMA,
       temperature: 0,
     });
-    expect(request.config).not.toHaveProperty('responseSchema');
     expect(request.config.systemInstruction).toContain(
       'Input selalu berupa object JSON',
     );
@@ -210,7 +215,12 @@ describe('CvLlmService', () => {
       weaknesses: [],
     });
     expect(generateContent).toHaveBeenCalledWith(
-      expect.objectContaining({ contents: JSON.stringify(input) }),
+      expect.objectContaining({
+        contents: JSON.stringify(input),
+        config: expect.objectContaining({
+          responseSchema: CV_ANALYSIS_RESPONSE_SCHEMA,
+        }),
+      }),
     );
   });
 

@@ -109,6 +109,7 @@ export class CvLlmService {
         systemInstruction: instructions,
         temperature: 0,
         responseMimeType: 'application/json',
+        responseSchema,
         httpOptions: { timeout: 120_000 },
       },
     });
